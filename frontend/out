@@ -1,0 +1,14 @@
+yarn run v1.22.22
+$ yarn compile-contract-types && react-scripts build
+$ yarn compile-external-abi-types && yarn compile-v3-contract-types
+$ typechain --target ethers-v5 --out-dir src/abis/types './src/abis/**/*.json'
+Successfully generated 22 typings!
+$ typechain --target ethers-v5 --out-dir src/types/v3 './node_modules/@uniswap/?(v3-core|v3-periphery)/artifacts/contracts/**/*.json'
+Successfully generated 80 typings!
+Creating an optimized production build...
+Failed to compile.
+
+You must provide the URL of lib/mappings.wasm by calling SourceMapConsumer.initialize({ 'lib/mappings.wasm': ... }) before using SourceMapConsumer
+
+
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
