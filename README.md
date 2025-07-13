@@ -50,12 +50,11 @@ npx hardhat --network local run scripts/deploy_all.js
 ```
 
 ## 前端部署
-当前只是把官方的前端[interface](https://github.com/Uniswap/interface)  v3.3.6版，迁移过来了
-按顺序执行 先编译依赖的sdk
+按顺序执行 先编译依赖的sdk 再启动前端项目
 ```
 cd ./v2-sdk-3.0.0-alpha.0 && yarn && yarn build
 cd ./v3-sdk-3.0.0-alpha.6 && yarn && yarn build
-cd ./frontend && yarn && yarn build
+cd ./frontend && yarn && yarn start
 ```
 ```shell
 cd frontend
