@@ -66,7 +66,7 @@ yarn cache clean --force
 yarn start
 
 # 备注：如果node verson>=17，需要加入如下环境变量
-export NODE_OPTIONS=--openssl-legacy-provider
+export NODE_OPTIONS="--openssl-legacy-provider --no-experimental-fetch"
 
 # 若要发布，可进行编译
 yarn build
