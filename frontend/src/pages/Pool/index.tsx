@@ -16,7 +16,7 @@ import styled, { ThemeContext } from 'styled-components'
 import { HideSmall, TYPE } from 'theme'
 import { LoadingRows } from './styleds'
 
-import CTACards from './CTACards'
+// import CTACards from './CTACards'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 870px;
@@ -179,7 +179,7 @@ export default function Pool() {
               </ButtonRow>
             </TitleRow>
 
-            <CTACards />
+            {/*<CTACards />*/}
 
             <MainContentWrapper>
               {positionsLoading2 ? (
