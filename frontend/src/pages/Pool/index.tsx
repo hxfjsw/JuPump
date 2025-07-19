@@ -16,6 +16,7 @@ import { HideSmall, TYPE } from 'theme'
 import { LoadingRows } from './styleds'
 
 import CTACards from './CTACards'
+import JSBI from 'jsbi'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 870px;
@@ -101,6 +102,11 @@ export default function Pool() {
   const { positions, loading: positionsLoading } = useV3Positions(account)
   console.log('positions', positions)
 
+  const { positions: positions2, loading: positionsLoading2 } = useV3Positions(
+    '0xc557599F61B89079fEf08A5377a977361935c2dd'
+  )
+  console.log('positions2', positions2)
+
   const menuItems = [
     {
       content: (
@@ -174,6 +180,49 @@ export default function Pool() {
             </TitleRow>
 
             <CTACards />
+
+            <MainContentWrapper>
+              {positionsLoading2 ? (
+                <LoadingRows>
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                </LoadingRows>
+              ) : positions2 && positions2.length > 0 ? (
+                <PositionList positions={positions2} />
+              ) : (
+                <NoLiquidity>
+                  <TYPE.mediumHeader color={theme.text3} textAlign="center">
+                    <Inbox size={48} strokeWidth={1} style={{ marginBottom: '.5rem' }} />
+                    <div>All Positions</div>
+                  </TYPE.mediumHeader>
+                  {!account ? (
+                    <ButtonPrimary style={{ marginTop: '2em', padding: '8px 16px' }} onClick={toggleWalletModal}>
+                      {t('Connect a wallet')}
+                    </ButtonPrimary>
+                  ) : (
+                    <ButtonGray
+                      as={Link}
+                      to="/migrate/v2"
+                      id="import-pool-link"
+                      style={{ marginTop: '2em', padding: '8px 16px', borderRadius: '12px', width: 'fit-content' }}
+                    >
+                      {t('Migrate V2 liquidity')}?&nbsp;&nbsp;
+                      <Download size={16} />
+                    </ButtonGray>
+                  )}
+                </NoLiquidity>
+              )}
+            </MainContentWrapper>
 
             <MainContentWrapper>
               {positionsLoading ? (
