@@ -1,3 +1,33 @@
+演示站点
+
+https://ju-pump.vercel.app/#/swap
+
+
+## 前端部署
+按顺序执行 先编译依赖的sdk 再启动前端项目
+
+
+```shell
+cd frontend
+
+# 先清一下缓存，以防编译异常，我遇到了，清理后一切恢复正常
+yarn cache clean --force
+
+# 启动
+yarn start
+
+# 备注：如果node verson>=17，需要加入如下环境变量
+export NODE_OPTIONS="--openssl-legacy-provider --no-experimental-fetch"
+
+# 若要发布，可进行编译
+yarn build
+```
+
+## 遇到lint报错执行以下命令可以自动修复
+npx prettier --write "src/**/*.{ts,tsx}"
+
+
+
 # uniswap-v3
 基于hardhat框架管理和发布uniswap v3
 建议结合本文来深入了解源码：
@@ -49,28 +79,6 @@ npx hardhat --network local run scripts/deploy_all.js
 
 ```
 
-## 前端部署
-按顺序执行 先编译依赖的sdk 再启动前端项目
-```
-cd ./v2-sdk-3.0.0-alpha.0 && yarn && yarn build
-cd ./v3-sdk-3.0.0-alpha.6 && yarn && yarn build
-cd ./frontend && yarn && yarn start
-```
-```shell
-cd frontend
-
-# 先清一下缓存，以防编译异常，我遇到了，清理后一切恢复正常
-yarn cache clean --force
-
-# 启动
-yarn start
-
-# 备注：如果node verson>=17，需要加入如下环境变量
-export NODE_OPTIONS="--openssl-legacy-provider --no-experimental-fetch"
-
-# 若要发布，可进行编译
-yarn build
-```
 
 
 ## 信息整理
@@ -80,5 +88,3 @@ yarn build
 3. [NFT仓位描述合约](https://goerli.etherscan.io/address/0xd28EC177C8f347F4C759a9a15055Ccf1A66E2342)  对应合约地址：`0xd28EC177C8f347F4C759a9a15055Ccf1A66E2342`
 4. [NFT管理合约发布](https://goerli.etherscan.io/address/0xA4B098cbd4a2DD037558e4888124B9fB6C732cE0)  对应合约地址：`0xA4B098cbd4a2DD037558e4888124B9fB6C732cE0`
 
-## 遇到报错执行
-npx prettier --write "src/**/*.{ts,tsx}"
