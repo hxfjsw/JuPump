@@ -144,26 +144,26 @@ export default function Vote() {
         <VoteCard>
           <CardBGImage />
           <CardNoise />
-          <CardSection>
-            <AutoColumn gap="md">
-              <RowBetween>
-                <TYPE.white fontWeight={600}>Uniswap Governance</TYPE.white>
-              </RowBetween>
-              <RowBetween>
-                <TYPE.white fontSize={14}>
-                  UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or
-                  delegate your votes to a third party.
-                </TYPE.white>
-              </RowBetween>
-              <ExternalLink
-                style={{ color: 'white', textDecoration: 'underline' }}
-                href="https://uniswap.org/blog/uni"
-                target="_blank"
-              >
-                <TYPE.white fontSize={14}>Read more about Uniswap governance</TYPE.white>
-              </ExternalLink>
-            </AutoColumn>
-          </CardSection>
+          {/*<CardSection>*/}
+          {/*  <AutoColumn gap="md">*/}
+          {/*    <RowBetween>*/}
+          {/*      <TYPE.white fontWeight={600}>Uniswap Governance</TYPE.white>*/}
+          {/*    </RowBetween>*/}
+          {/*    <RowBetween>*/}
+          {/*      <TYPE.white fontSize={14}>*/}
+          {/*        UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or*/}
+          {/*        delegate your votes to a third party.*/}
+          {/*      </TYPE.white>*/}
+          {/*    </RowBetween>*/}
+          {/*    <ExternalLink*/}
+          {/*      style={{ color: 'white', textDecoration: 'underline' }}*/}
+          {/*      href="https://uniswap.org/blog/uni"*/}
+          {/*      target="_blank"*/}
+          {/*    >*/}
+          {/*      <TYPE.white fontSize={14}>Read more about Uniswap governance</TYPE.white>*/}
+          {/*    </ExternalLink>*/}
+          {/*  </AutoColumn>*/}
+          {/*</CardSection>*/}
           <CardBGImage />
           <CardNoise />
         </VoteCard>
@@ -240,7 +240,7 @@ export default function Vote() {
         })}
       </TopSection>
       <TYPE.subHeader color="text3">
-        A minimum threshold of 1% of the total UNI supply is required to submit proposals
+        {/*A minimum threshold of 1% of the total UNI supply is required to submit proposals*/}
       </TYPE.subHeader>
     </PageWrapper>
   )
