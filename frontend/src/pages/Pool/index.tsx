@@ -3,6 +3,7 @@ import { ButtonGray, ButtonOutlined, ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
 import { FlyoutAlignment, NewMenu } from 'components/Menu'
 import { SwapPoolTabs } from 'components/NavigationTabs'
+import { AllPositionList } from 'components/PositionList'
 import PositionList from 'components/PositionList'
 import { RowBetween, RowFixed } from 'components/Row'
 import { useActiveWeb3React } from 'hooks/web3'
@@ -16,7 +17,6 @@ import { HideSmall, TYPE } from 'theme'
 import { LoadingRows } from './styleds'
 
 import CTACards from './CTACards'
-import JSBI from 'jsbi'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 870px;
@@ -198,7 +198,7 @@ export default function Pool() {
                   <div />
                 </LoadingRows>
               ) : positions2 && positions2.length > 0 ? (
-                <PositionList positions={positions2} />
+                <AllPositionList positions={positions2} />
               ) : (
                 <NoLiquidity>
                   <TYPE.mediumHeader color={theme.text3} textAlign="center">

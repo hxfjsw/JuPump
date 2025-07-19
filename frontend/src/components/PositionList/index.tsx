@@ -57,3 +57,23 @@ export default function PositionList({ positions }: PositionListProps) {
     </>
   )
 }
+
+export function AllPositionList({ positions }: PositionListProps) {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <DesktopHeader>
+        <div>
+          All positions
+          {positions && ' (' + positions.length + ')'}
+        </div>
+        <div>{t('Price range')}</div>
+      </DesktopHeader>
+      <MobileHeader>All positions</MobileHeader>
+      {positions.map((p) => {
+        return <PositionListItem key={p.tokenId.toString()} positionDetails={p} />
+      })}
+    </>
+  )
+}
