@@ -99,6 +99,7 @@ export default function Pool() {
   const theme = useContext(ThemeContext)
 
   const { positions, loading: positionsLoading } = useV3Positions(account)
+  console.log('positions', positions)
 
   const menuItems = [
     {
@@ -216,42 +217,6 @@ export default function Pool() {
                 </NoLiquidity>
               )}
             </MainContentWrapper>
-            <RowFixed justify="center" style={{ width: '100%' }}>
-              <ButtonOutlined
-                as={Link}
-                to="/pool/v2"
-                id="import-pool-link"
-                style={{
-                  padding: '8px 16px',
-                  margin: '0 4px',
-                  borderRadius: '12px',
-                  width: 'fit-content',
-                  fontSize: '14px',
-                }}
-              >
-                <Layers size={14} style={{ marginRight: '8px' }} />
-
-                {t('View V2 Liquidity')}
-              </ButtonOutlined>
-              {positions && positions.length > 0 && (
-                <ButtonOutlined
-                  as={Link}
-                  to="/migrate/v2"
-                  id="import-pool-link"
-                  style={{
-                    padding: '8px 16px',
-                    margin: '0 4px',
-                    borderRadius: '12px',
-                    width: 'fit-content',
-                    fontSize: '14px',
-                  }}
-                >
-                  <ChevronsRight size={16} style={{ marginRight: '8px' }} />
-
-                  {t('Migrate Liquidity')}
-                </ButtonOutlined>
-              )}
-            </RowFixed>
           </AutoColumn>
         </AutoColumn>
       </PageWrapper>
