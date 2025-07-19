@@ -138,7 +138,7 @@ export default function Menu() {
         <StyledMenuIcon />
       </StyledMenuButton>
 
-      {open && (
+      {false && (
         <MenuFlyout>
           <MenuItem href="https://uniswap.org/">
             <Info size={14} />
