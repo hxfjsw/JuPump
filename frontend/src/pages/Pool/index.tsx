@@ -118,36 +118,36 @@ export default function Pool() {
       link: '/add/ETH',
       external: false,
     },
-    {
-      content: (
-        <MenuItem>
-          <ChevronsRight size={16} style={{ marginRight: '12px' }} />
-          {t('Migrate')}
-        </MenuItem>
-      ),
-      link: '/migrate/v2',
-      external: false,
-    },
-    {
-      content: (
-        <MenuItem>
-          <Layers size={16} style={{ marginRight: '12px' }} />
-          {t('V2 liquidity')}
-        </MenuItem>
-      ),
-      link: '/pool/v2',
-      external: false,
-    },
-    {
-      content: (
-        <MenuItem>
-          <BookOpen size={16} style={{ marginRight: '12px' }} />
-          {t('Learn')}
-        </MenuItem>
-      ),
-      link: 'https://docs.uniswap.org/',
-      external: true,
-    },
+    // {
+    //   content: (
+    //     <MenuItem>
+    //       <ChevronsRight size={16} style={{ marginRight: '12px' }} />
+    //       {t('Migrate')}
+    //     </MenuItem>
+    //   ),
+    //   link: '/migrate/v2',
+    //   external: false,
+    // },
+    // {
+    //   content: (
+    //     <MenuItem>
+    //       <Layers size={16} style={{ marginRight: '12px' }} />
+    //       {t('V2 liquidity')}
+    //     </MenuItem>
+    //   ),
+    //   link: '/pool/v2',
+    //   external: false,
+    // },
+    // {
+    //   content: (
+    //     <MenuItem>
+    //       <BookOpen size={16} style={{ marginRight: '12px' }} />
+    //       {t('Learn')}
+    //     </MenuItem>
+    //   ),
+    //   link: 'https://docs.uniswap.org/',
+    //   external: true,
+    // },
   ]
 
   return (
