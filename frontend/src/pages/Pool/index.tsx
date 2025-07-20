@@ -210,15 +210,7 @@ export default function Pool() {
                       {t('Connect a wallet')}
                     </ButtonPrimary>
                   ) : (
-                    <ButtonGray
-                      as={Link}
-                      to="/migrate/v2"
-                      id="import-pool-link"
-                      style={{ marginTop: '2em', padding: '8px 16px', borderRadius: '12px', width: 'fit-content' }}
-                    >
-                      {t('Migrate V2 liquidity')}?&nbsp;&nbsp;
-                      <Download size={16} />
-                    </ButtonGray>
+                    <div />
                   )}
                 </NoLiquidity>
               )}
@@ -253,15 +245,7 @@ export default function Pool() {
                       {t('Connect a wallet')}
                     </ButtonPrimary>
                   ) : (
-                    <ButtonGray
-                      as={Link}
-                      to="/migrate/v2"
-                      id="import-pool-link"
-                      style={{ marginTop: '2em', padding: '8px 16px', borderRadius: '12px', width: 'fit-content' }}
-                    >
-                      {t('Migrate V2 liquidity')}?&nbsp;&nbsp;
-                      <Download size={16} />
-                    </ButtonGray>
+                    <div />
                   )}
                 </NoLiquidity>
               )}
