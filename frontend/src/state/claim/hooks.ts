@@ -25,22 +25,25 @@ const CLAIM_PROMISES: { [key: string]: Promise<UserClaimData | null> } = {}
 
 // returns the claim for the given address, or null if not valid
 function fetchClaim(account: string, chainId: ChainId): Promise<UserClaimData | null> {
-  const formatted = isAddress(account)
-  if (!formatted) return Promise.reject(new Error('Invalid address'))
-  const key = `${chainId}:${account}`
+  // const formatted = isAddress(account)
+  // if (!formatted) return Promise.reject(new Error('Invalid address'))
+  // const key = `${chainId}:${account}`
+  return new Promise((resolve) => {
+    resolve(null)
+  })
 
-  return (CLAIM_PROMISES[key] =
-    CLAIM_PROMISES[key] ??
-    fetch('https://merkle-drop-1.uniswap.workers.dev/', {
-      body: JSON.stringify({ chainId, address: formatted }),
-      headers: {
-        'Content-Type': 'application/json',
-        'Referrer-Policy': 'no-referrer',
-      },
-      method: 'POST',
-    })
-      .then((res) => (res.ok ? res.json() : console.log(`No claim for account ${formatted} on chain ID ${chainId}`)))
-      .catch((error) => console.error('Failed to get claim data', error)))
+  // return (CLAIM_PROMISES[key] =
+  //   CLAIM_PROMISES[key] ??
+  //   fetch('https://merkle-drop-1.uniswap.workers.dev/', {
+  //     body: JSON.stringify({ chainId, address: formatted }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Referrer-Policy': 'no-referrer',
+  //     },
+  //     method: 'POST',
+  //   })
+  //     .then((res) => (res.ok ? res.json() : console.log(`No claim for account ${formatted} on chain ID ${chainId}`)))
+  //     .catch((error) => console.error('Failed to get claim data', error)))
 }
 
 // parse distributorContract blob and detect if user has claim data

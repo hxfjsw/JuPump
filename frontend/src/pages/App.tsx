@@ -86,7 +86,7 @@ export default function App() {
             <ThemedBackground />
             <Popups />
             <Polling />
-            <TopLevelModals />
+            {/*<TopLevelModals />*/}
             <Web3ReactManager>
               <Switch>
                 <Route exact strict path="/vote" component={Vote} />
