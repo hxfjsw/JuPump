@@ -343,6 +343,9 @@ export default function Header() {
         </Title>
       </HeaderRow>
       <HeaderLinks>
+        <StyledExternalLink id={`stake-nav-link`} href={'https://www.moon-swap.com'} target="_self">
+          Home
+        </StyledExternalLink>
         <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
           {t('swap')}
         </StyledNavLink>
